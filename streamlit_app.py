@@ -102,13 +102,13 @@ def main():
       "What type of project?",
       options = ['🌐 Very Common', '🔄 Common', '📊 Normal', '🔍 Uncommon', '🚀 Highly Original'],
       value = '📊 Normal')
-    DATE = st.number_input("How long should it take? (Hours)", step = 0.5,  placeholder = "1")
+    HOURS = st.number_input("How long should it take? (Hours)", value = 1, min_value = 1)
 
     if st.button("Generate Idea"):
-        generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, DATE)
+        generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS)
 
-def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, DATE):
-    PROMPT = f"Propose a {UNIQUENESS}-inspired idea for a {PURPOSE} {HOBBY} project attainable in {DATE} hours, encapsulated in a concise sentence (max 10 words), designed to captivate a {AUDIENCE} audience."
+def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
+    PROMPT = f"Propose a {UNIQUENESS}-inspired idea for a {PURPOSE} {HOBBY} project attainable in {HOURS} hours, encapsulated in a concise sentence (max 10 words), designed to captivate a {AUDIENCE} audience."
 
     # st.text("Generated Prompt:")
     # st.text(PROMPT)
