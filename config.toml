@@ -1,0 +1,7 @@
+[theme]
+primaryColor="#3498db"   # Blue color
+backgroundColor="#ecf0f1" # Light background color
+secondaryBackgroundColor="#bdc3c7"  # Secondary background color
+
+[font]
+family = "Computer Modern"
