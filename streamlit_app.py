@@ -74,12 +74,10 @@ def main():
     
     st.title("I'm Bored 🥱")
     st.subheader("Let's find you a project!")
-
-    HOBBY = ""
-
-    selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
+    
     st.divider()
-
+    HOBBY = ""
+    selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
     if selected_hobby == '':
         custom_hobby = st.text_input("Or, enter your own!")
 
@@ -92,25 +90,30 @@ def main():
     else:
         HOBBY = selected_hobby
         st.write(f"Hobby: {HOBBY}")
+    st.divider()
     PURPOSE = st.select_slider(
       "What's the project's purpose?",
       options = ['🏋️ Practice', '📚 Educational', '🎓 Fun-Educational', '🎉 Entertaining', '✨ Whimsical'],
       value = '🎓 Fun-Educational')
+    st.divider()
     AUDIENCE = st.select_slider(
       "Who do you want to show this to?",
-      options = ['📚 Academic', '👨‍💼 Friends', '💼 Work'],
-      value = '👨‍💼 Friends')
+      options = ['📚 Academic', '👨‍💼 Friends/family', '💼 Work'],
+      value = '👨‍💼 Friends/family')
+    st.divider()
     UNIQUENESS = st.select_slider(
       "What type of project?",
       options = ['🌐 Very Common', '🔄 Common', '📊 Normal', '🔍 Uncommon', '🚀 Highly Original'],
       value = '📊 Normal')
+    st.divider()
     HOURS = st.number_input("How long should it take? (Hours)", value = 1, min_value = 1)
 
+    st.divider()
     if st.button("Generate Idea"):
         generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS)
 
 def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
-    PROMPT = f"Propose a {UNIQUENESS}-inspired idea for a {PURPOSE} {HOBBY} project attainable in {HOURS} hours, encapsulated in a concise sentence (max 10 words), designed to captivate a {AUDIENCE} audience."
+    PROMPT = f"Propose a {UNIQUENESS} idea for a {PURPOSE} {HOBBY} project attainable in {HOURS} hours, encapsulated in a concise sentence (max 10 words), designed to captivate a {AUDIENCE} audience."
 
     # st.text("Generated Prompt:")
     # st.text(PROMPT)
@@ -122,7 +125,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
             {"role": "user", "content": PROMPT}
         ]
     )
-
+    st.divider()
     st.subheader("You've gotta try this!")
     content_with_quotes = str(completion.choices[0].message.content)
     content_without_quotes = content_with_quotes[1:-1] if content_with_quotes.startswith('"') and content_with_quotes.endswith('"') else content_with_quotes
