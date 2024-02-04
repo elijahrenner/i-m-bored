@@ -1,5 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from annotated_text import annotated_text
+
 from openai import OpenAI
 import os
 from datetime import date
@@ -126,7 +128,17 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
         ]
     )
     st.divider()
-    st.subheader("You've gotta try this!")
+    annotated_text("Here's your, ",
+                    (f"{UNIQUENESS}", "uniqueness"),
+                    (f" {HOBBY}", "hobby"),
+                    " project for "
+                    (f"{PURPOSE}", "purpose(s)"),
+                    " to showcase in a ",
+                    (f"{AUDIENCE}", "environment"),
+                    " achievable in ",
+                    (f"{HOURS}", "hours"),
+                    ".",
+                    "You've gotta try it!")
     content_with_quotes = str(completion.choices[0].message.content)
     content_without_quotes = content_with_quotes[1:-1] if content_with_quotes.startswith('"') and content_with_quotes.endswith('"') else content_with_quotes
     st.write(content_without_quotes)
