@@ -110,8 +110,6 @@ def main():
     if st.button("Generate Idea"):
         if HOBBY:        
             generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS)
-        else:
-            st.warning('Make sure to select a hobby!', icon="⚠️")
             
 
 def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
