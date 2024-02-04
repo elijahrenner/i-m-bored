@@ -70,7 +70,7 @@ hobbies = [
 ]
 
 def main():
-    st.set_page_config(page_title="I'm bored", page_icon="🥱", layout="wide")
+    st.set_page_config(page_title="I'm bored", page_icon="🥱", layout="centered")
     
     st.title("I'm bored 🥱")
     st.subheader("Let's find you a project!")
