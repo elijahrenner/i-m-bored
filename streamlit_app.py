@@ -70,9 +70,9 @@ hobbies = [
 ]
 
 def main():
-    st.set_page_config(page_title="I'm bored", page_icon="🥱", layout="centered")
+    st.set_page_config(page_title="I'm Bored", page_icon="🥱", layout="centered")
     
-    st.title("I'm bored 🥱")
+    st.title("I'm Bored 🥱")
     st.subheader("Let's find you a project!")
 
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
@@ -129,7 +129,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     content_without_quotes = content_with_quotes[1:-1] if content_with_quotes.startswith('"') and content_with_quotes.endswith('"') else content_with_quotes
     st.write(content_without_quotes)
     st.divider()
-    st.link_button("by Elijah Renner", "https://github.com/elijahrenner")
+    st.link_button("by Elijah Renner", "https://elijahrenner.com")
 
 
 if __name__ == "__main__":
