@@ -87,6 +87,8 @@ def main():
         # If the user entered a custom hobby, update the selected_hobby variable
         if custom_hobby:
             selected_hobby = custom_hobby
+        else:
+            st.warning('Make sure to select a hobby!', icon="⚠️")
 
     # Store the selected or custom hobby in the variable HOBBY
     HOBBY = selected_hobby
