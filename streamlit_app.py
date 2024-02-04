@@ -75,23 +75,19 @@ def main():
     st.title("I'm Bored 🥱")
     st.subheader("Let's find you a project!")
 
+    HOBBY = ""
+
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
-
-    # Display a divider for better visualization
     st.divider()
-
-    # If the user selects the empty option, provide a text input for custom input
     if selected_hobby == '':
         custom_hobby = st.text_input("Or, enter your own!")
         
         # If the user entered a custom hobby, update the selected_hobby variable
         if custom_hobby:
-            selected_hobby = custom_hobby
-            st.write(f"Hobby: {HOBBY}")
+            HOBBY = custom_hobby
+            st.write(f"Hobby: {selected_hobby}")
         else:
             st.warning('Be sure to select a hobby!', icon="⚠️")
-
-    # Store the selected or custom hobby in the variable HOBBY
     if selected_hobby != '':
         HOBBY = selected_hobby
         st.write(f"Hobby: {HOBBY}")
