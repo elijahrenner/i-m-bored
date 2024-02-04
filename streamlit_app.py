@@ -70,7 +70,7 @@ hobbies = [
 
 def main():
     st.title("I'm bored 🥱")
-    st.subheader("You're bored and need a fun project. Let's fix that!")
+    st.subheader("Let's find you a project!")
 
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
 
