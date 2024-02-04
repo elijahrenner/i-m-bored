@@ -129,16 +129,16 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     )
     st.divider()
     annotated_text(
-    "Here's your, ",
-    (f"{UNIQUENESS}", "uniqueness"),
+    "Here's your ",
+    (f"{UNIQUENESS}", "uniqueness "),
     (f" {HOBBY}", "hobby"),
     " project for ",
     (f"{PURPOSE}", "purpose(s)"),
     " to showcase in a ",
     (f"{AUDIENCE}", "environment"),
     " achievable in ",
-    (f"{HOURS}", "hours"),
-    ".",
+    (f"{HOURS}", "hours "),
+    ". ",
     "You've gotta try it!"
     )
     content_with_quotes = str(completion.choices[0].message.content)
