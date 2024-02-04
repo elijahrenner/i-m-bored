@@ -87,14 +87,14 @@ def main():
         # If the user entered a custom hobby, update the selected_hobby variable
         if custom_hobby:
             selected_hobby = custom_hobby
+            st.write(f"Hobby: {HOBBY}")
         else:
             st.warning('Make sure to select a hobby!', icon="⚠️")
 
     # Store the selected or custom hobby in the variable HOBBY
-    HOBBY = selected_hobby
-
-    # Display the selected or custom hobby
-    st.write(f"Hobby: {HOBBY}")
+    if selected_hobby != '':
+        HOBBY = selected_hobby
+        st.write(f"Hobby: {HOBBY}")
     PURPOSE = st.select_slider(
       "What's the project's purpose?",
       options = ['🏋️ Practice', '📚 Educational', '🎓 Fun-Educational', '🎉 Entertaining', '✨ Whimsical'],
