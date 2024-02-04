@@ -89,7 +89,7 @@ def main():
             selected_hobby = custom_hobby
             st.write(f"Hobby: {HOBBY}")
         else:
-            st.warning('Make sure to select a hobby!', icon="⚠️")
+            st.warning('Be sure to select a hobby!', icon="⚠️")
 
     # Store the selected or custom hobby in the variable HOBBY
     if selected_hobby != '':
