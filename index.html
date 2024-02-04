@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Bored!</title>
+</head>
+<style>
+</style>
+<body>
+    <div class="welcome"></div>
+
+    <div class="hobby"> <!-- HOBBY -->
+        <input type="text" id="activity-input" placeholder="What's your activity?">
+    </div>
+    <!-- Purpose Slider -->
+    <div class="purpose">
+        <p id="selected-purpose"></p>
+        <input type="range" min="1" max="5" value="3" class="slider" id="purpose-slider">
+        <script>
+            // Get the purpose slider element
+            var purposeSlider = document.getElementById('purpose-slider');
+
+            // Get the element to display the selected purpose
+            var selectedPurposeElement = document.getElementById('selected-purpose');
+
+            // Define a function to update the selected purpose based on the slider value
+            function updateSelectedPurpose() {
+                // Map slider values to purposes
+                var purposeMap = {
+                    1: 'Practice',
+                    2: 'Educational',
+                    3: 'Fun/Educational Balance',
+                    4: 'Fun',
+                    5: 'Whimsical'
+                };
+
+                // Get the selected purpose based on the slider value
+                var selectedPurpose = purposeMap[purposeSlider.value];
+
+                // Update the displayed purpose
+                selectedPurposeElement.textContent = 'Purpose (' + selectedPurpose + ')';
+            }
+
+            // Add an input event listener to the purpose slider
+            purposeSlider.addEventListener('input', updateSelectedPurpose);
+
+            // Initial call to set the default selected purpose
+            updateSelectedPurpose();
+        </script>
+    </div>
+    <!-- Audience Slider -->
+    <div class="audience">
+        <p id="selected-audience"></p>
+        <input type="range" min="1" max="3" value="2" class="slider" id="audience-slider">
+        <script>
+            // Get the audience slider element
+            var audienceSlider = document.getElementById('audience-slider');
+
+            // Get the element to display the selected audience
+            var selectedAudienceElement = document.getElementById('selected-audience');
+
+            // Define a function to update the selected audience based on the slider value
+            function updateSelectedAudience() {
+                // Map slider values to audiences
+                var audienceMap = {
+                    1: 'Academic',
+                    2: 'Personal',
+                    3: 'Work'
+                };
+
+                // Get the selected audience based on the slider value
+                var selectedAudience = audienceMap[audienceSlider.value];
+
+                // Update the displayed audience
+                selectedAudienceElement.textContent = 'Audience (' + selectedAudience + ')';
+            }
+
+            // Add an input event listener to the audience slider
+            audienceSlider.addEventListener('input', updateSelectedAudience);
+
+            // Initial call to set the default selected audience
+            updateSelectedAudience();
+        </script>
+    </div>
+    <!-- Uniqueness Slider -->
+    <div class="uniqueness">
+        <p id="selected-uniqueness"></p>
+        <input type="range" min="1" max="5" value="3" class="slider" id="uniqueness-slider">
+        <script>
+            // Get the uniqueness slider element
+            var uniquenessSlider = document.getElementById('uniqueness-slider');
+
+            // Get the element to display the selected uniqueness
+            var selectedUniquenessElement = document.getElementById('selected-uniqueness');
+
+            // Define a function to update the selected uniqueness based on the slider value
+            function updateSelectedUniqueness() {
+                // Map slider values to uniqueness levels
+                var uniquenessMap = {
+                    1: 'Very Common',
+                    2: 'Common',
+                    3: 'Normal',
+                    4: 'Uncommon',
+                    5: 'Highly Original'
+                };
+
+                // Get the selected uniqueness based on the slider value
+                var selectedUniqueness = uniquenessMap[uniquenessSlider.value];
+
+                // Update the displayed uniqueness
+                selectedUniquenessElement.textContent = 'Uniqueness (' + selectedUniqueness + ')';
+            }
+
+            // Add an input event listener to the uniqueness slider
+            uniquenessSlider.addEventListener('input', updateSelectedUniqueness);
+
+            // Initial call to set the default selected uniqueness
+            updateSelectedUniqueness();
+        </script>
+    </div>
+    <!-- Time Slider -->
+    <div class="time">
+        <p id="selected-time"></p>
+        <input type="range" min="1" max="5" value="3" class="slider" id="time-slider">
+        <script>
+            // Get the time slider element
+            var timeSlider = document.getElementById('time-slider');
+
+            // Get the element to display the selected time
+            var selectedTimeElement = document.getElementById('selected-time');
+
+            // Define a function to update the selected time based on the slider value
+            function updateSelectedTime() {
+                // Map slider values to time durations
+                var timeMap = {
+                    1: '15 mins',
+                    2: '1 hour',
+                    3: '1-2 days',
+                    4: '1-2 weeks',
+                    5: '>1 month'
+                };
+
+                // Get the selected time based on the slider value
+                var selectedTime = timeMap[timeSlider.value];
+
+                // Update the displayed time
+                selectedTimeElement.textContent = 'Time (' + selectedTime + ')';
+            }
+
+            // Add an input event listener to the time slider
+            timeSlider.addEventListener('input', updateSelectedTime);
+
+            // Initial call to set the default selected time
+            updateSelectedTime();
+        </script>
+    </div>
+    <div class="submit">
+        <button id="submit-activity">Get an idea!</button>
+        <script>
+            let PROMPT = ""
+            document.getElementById('submit-activity').addEventListener('click', async function() {
+                // Get the input value
+                var inputText = document.getElementById('activity-input').value;
+
+                // Check if the input is not blank
+                if (inputText.trim() !== '') {
+                    // Store the input value in the variable HOBBY
+                    var HOBBY = inputText;
+
+                    // You can do further processing with the HOBBY variable if needed
+                    console.log('Hobby stored:', HOBBY);
+                    
+                    // Get the purpose slider element
+                    var purposeSlider = document.getElementById('purpose-slider');
+
+                    // Get the audience slider element
+                    var audienceSlider = document.getElementById('audience-slider');
+
+                    // Get the uniqueness slider element
+                    var uniquenessSlider = document.getElementById('uniqueness-slider');
+
+                    // Get the time slider element
+                    var timeSlider = document.getElementById('time-slider');
+
+                    // Get the submit button element
+                    var submitButton = document.getElementById('submit-activity');
+
+                    var purposeMap = {
+                        1: 'Practice',
+                        2: 'Educational',
+                        3: 'Fun/Educational Balance',
+                        4: 'Fun',
+                        5: 'Whimsical'
+                    };
+
+                    var audienceMap = {
+                        1: 'Academic',
+                        2: 'Personal',
+                        3: 'Work'
+                    };
+
+                    var uniquenessMap = {
+                        1: 'Very Common',
+                        2: 'Common',
+                        3: 'Normal',
+                        4: 'Uncommon',
+                        5: 'Highly Original'
+                    };
+
+                    var timeMap = {
+                        1: '15 mins',
+                        2: '1 hour',
+                        3: '1-2 days',
+                        4: '1-2 weeks',
+                        5: '>1 month'
+                    };
+
+                    // Retrieve the textual representations of the selected values
+                    var PURPOSE = purposeMap[purposeSlider.value];
+                    var AUDIENCE = audienceMap[audienceSlider.value];
+                    var UNIQUENESS = uniquenessMap[uniquenessSlider.value];
+                    var TIME = timeMap[timeSlider.value];
+
+                    // You can use these text values for further processing or display them as needed
+                    console.log('Purpose:', PURPOSE);
+                    console.log('Audience:', AUDIENCE);
+                    console.log('Uniqueness:', UNIQUENESS);
+                    console.log('Time:', TIME);
+
+                    PROMPT = "Share a " + UNIQUENESS + " idea for a " + PURPOSE + " " + HOBBY + " project achievable in " + TIME + " in one sentence to showcase in a " + AUDIENCE + " environment. Keep it simple and concise, with no more than 10 words."
+
+
+                } else {
+                    // Alert the user if the input is blank
+                    alert('Please enter an activity before submitting.');
+                }
+            });
+        </script>
+    </div>
+
+    
+    <div class="footer"></div>
+    
+
+</body>
+</html>
