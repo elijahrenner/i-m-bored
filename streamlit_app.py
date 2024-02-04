@@ -4,15 +4,7 @@ import os
 from datetime import date
 import random
 
-# Read .env file
-env_file_path = '.env'
-with open(env_file_path) as f:
-    for line in f:
-        # Skip comments and empty lines
-        if line.strip() and not line.strip().startswith('#'):
-            key, value = line.strip().split('=', 1)
-            os.environ[key] = value
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 hobbies = [
     '📚 Reading', '✍️ Writing', '✏️ Drawing', '🎨 Painting', '📷 Photography', '🍳 Cooking', '🍰 Baking',
