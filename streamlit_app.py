@@ -79,16 +79,17 @@ def main():
 
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
     st.divider()
+
     if selected_hobby == '':
         custom_hobby = st.text_input("Or, enter your own!")
-        
+
         # If the user entered a custom hobby, update the selected_hobby variable
         if custom_hobby:
             HOBBY = custom_hobby
-            st.write(f"Hobby: {selected_hobby}")
+            st.write(f"Hobby: {HOBBY}")
         else:
             st.warning('Be sure to select a hobby!', icon="⚠️")
-    if selected_hobby != '':
+    else:
         HOBBY = selected_hobby
         st.write(f"Hobby: {HOBBY}")
     PURPOSE = st.select_slider(
