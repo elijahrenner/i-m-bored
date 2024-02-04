@@ -73,7 +73,7 @@ def main():
     st.set_page_config(page_title="I'm Bored", page_icon="🥱", layout="centered")
     
     st.title("I'm Bored 🥱")
-    st.subheader("Let's find you a project!")
+    st.subheader("Bored? Let's find a project!")
     
     st.divider()
     HOBBY = ""
