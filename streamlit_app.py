@@ -76,10 +76,8 @@ def main():
     st.subheader("Let's find you a project!")
 
     HOBBY = ""
-
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
     st.divider()
-
     if selected_hobby == '':
         custom_hobby = st.text_input("Or, enter your own!")
 
@@ -92,6 +90,10 @@ def main():
     else:
         HOBBY = selected_hobby
         st.write(f"Hobby: {HOBBY}")
+        
+        # Clear custom hobby input if a predefined hobby is selected
+        if custom_hobby:
+            st.text_input("Or, enter your own!", key="custom_hobby")
     PURPOSE = st.select_slider(
       "What's the project's purpose?",
       options = ['🏋️ Practice', '📚 Educational', '🎓 Fun-Educational', '🎉 Entertaining', '✨ Whimsical'],
