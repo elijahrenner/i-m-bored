@@ -77,6 +77,8 @@ def main():
     st.title("I'm Bored 🥱")
     st.subheader("Bored? Let's find a project!")
 
+    st.image('Creative team-bro.png', caption='Sunrise by the mountains')
+
     st.divider()
     HOBBY = ""
     selected_hobby = st.selectbox("Select from our list of hobbies.", ['', *hobbies])
