@@ -100,8 +100,8 @@ def main():
     st.divider()
     AUDIENCE = st.select_slider(
       "Who do you want to show this to?",
-      options = ['📚 Academic', '👨‍💼 Friends/family', '💼 Work'],
-      value = '👨‍💼 Friends/family')
+      options = ['📚 Academic', '👨‍💼 Friends/Family', '💼 Work'],
+      value = '👨‍💼 Friends/Family')
     st.divider()
     UNIQUENESS = st.select_slider(
       "What type of project?",
@@ -131,7 +131,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     annotated_text(
     "Here's your ",
     (f"{UNIQUENESS}", "uniqueness"),
-    "‎",
+    "",
     (f"{HOBBY}", "hobby"),
     " project for ",
     (f"{PURPOSE}", "purpose(s)"),
