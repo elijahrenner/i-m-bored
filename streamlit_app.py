@@ -128,7 +128,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
         ]
     )
     st.divider()
-    st.subheader(annotated_text(
+    annotated_text(
     "Here's your ",
     (f"{UNIQUENESS}", "uniqueness "),
     (f" {HOBBY}", "hobby"),
@@ -140,7 +140,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     (f"{HOURS}", "hours "),
     ". ",
     "You've gotta try it!"
-    ))
+    )
     content_with_quotes = str(completion.choices[0].message.content)
     content_without_quotes = content_with_quotes[1:-1] if content_with_quotes.startswith('"') and content_with_quotes.endswith('"') else content_with_quotes
     st.write(content_without_quotes)
