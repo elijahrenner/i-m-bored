@@ -130,8 +130,9 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     st.divider()
     annotated_text(
     "Here's your ",
-    (f"{UNIQUENESS}", "uniqueness "),
-    (f" {HOBBY}", "hobby"),
+    (f"{UNIQUENESS}", "uniqueness"),
+    " "
+    (f"{HOBBY}", "hobby"),
     " project for ",
     (f"{PURPOSE}", "purpose(s)"),
     " to showcase in a ",
