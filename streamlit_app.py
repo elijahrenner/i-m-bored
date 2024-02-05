@@ -143,7 +143,7 @@ def generate_idea(HOBBY, PURPOSE, AUDIENCE, UNIQUENESS, HOURS):
     )
     content_with_quotes = str(completion.choices[0].message.content)
     content_without_quotes = content_with_quotes[1:-1] if content_with_quotes.startswith('"') and content_with_quotes.endswith('"') else content_with_quotes
-    st.caption(content_without_quotes)
+    st.subheader(content_without_quotes)
     st.divider()
     st.link_button("by Elijah Renner", "https://elijahrenner.com")
 
