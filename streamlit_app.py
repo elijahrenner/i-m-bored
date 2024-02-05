@@ -77,7 +77,7 @@ def main():
     st.title("I'm Bored 🥱")
     st.subheader("Bored? Let's find a project!")
 
-    st.image('https://raw.githubusercontent.com/elijahrenner/i-m-bored/014d4e1971294eed34cb1f570eb5aed085f29cb9/Creative%20team-bro.png', caption='Sunrise by the mountains')
+    st.image('https://raw.githubusercontent.com/elijahrenner/i-m-bored/014d4e1971294eed34cb1f570eb5aed085f29cb9/Creative%20team-bro.png')
 
     st.divider()
     HOBBY = ""
